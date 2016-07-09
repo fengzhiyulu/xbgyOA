@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main-nav { box-shadow:0 1px 4px rgba(173, 28, 28, 0.11);}
+#main-nav li .active{
+	border-left:3px solid #563d7c;
+	}
+#main-nav>li>ul>li>a>i{
+	padding-left:10px;
+		
+	}
+#main-nav ul>li>a:hover{
+	border-left:3px solid #563d7c;
+	
+	}
+ul li{
+	box-shadow:0 1px 1px rgba(0, 133, 181, 0.11);
+	}
+
+.form-inline .form-group{
+	margin-right: 25px;
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>  
+  	<package name="user" namespace="/user" extends="struts-default">  
+  		<action name="*" class="userAction" method="{1}">
+  			<result name="index" type="redirect">/index.jsp</result>
+			<result name="error" type="redirect">/error.jsp</result>   
+  			<result name="login">/WEB-INF/user/login.jsp</result>
+  			<result name="register">/WEB-INF/user/register.jsp</result>  
+  			<result name="changePWD">/WEB-INF/user/changePWD.jsp</result>
+  		</action>
+    </package>
+    
+    <package name="staff" namespace="/staff" extends="json-default">  
+  		<action name="*" class="staffAction" method="{1}">
+  			<result name="index">/WEB-INF/staff/list.jsp</result> 
+  			<result name="add">/WEB-INF/staff/add.jsp</result>
+  			<result name="edit">/WEB-INF/staff/edit.jsp</result>
+  			<result name="redirectIndex" type="redirectAction">staff/staffPage</result>
+  			<result type="redirect" name="success">staffPage</result>
+  			<result type="json" name="staffList"><param name="root">list</param></result>
+  		</action>
+    </package>
+    
+     <package name="custmer" namespace="/custmer" extends="json-default"> 
+	     <action name="*" class="custmerAction" method="{1}">
+	    	<result type="json" name="custmerList"><param name="root">list</param></result>
+	     </action> 
+     </package>
+    <package name="depart" namespace="/depart" extends="struts-default">
+    	<action name="*" class="departAction" method="{1}">
+  			<result name="list">/WEB-INF/depart/list.jsp</result>
+  			<result name="add">/WEB-INF/staff/edit.jsp</result>
+  		</action>
+    </package>
+    
+    <package name="purchase" namespace="/purchase" extends="struts-default">
+    	<action name="*" class="purchaseAction" method="{1}">
+  			<result name="add">/WEB-INF/store/add.jsp</result>
+  		</action>
+    </package>
+    
+</struts>  
